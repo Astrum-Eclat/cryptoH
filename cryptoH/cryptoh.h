@@ -1,5 +1,4 @@
-#include <string>
 #ifndef CRYPTOH_H
 #define CRYPTOH_H
-std::string hash(std::string data);
+char* hash(char* data, char* password);
 #endif

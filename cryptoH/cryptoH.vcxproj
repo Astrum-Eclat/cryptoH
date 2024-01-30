@@ -130,7 +130,7 @@
     <ClInclude Include="cryptoh.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="cryptoh.cpp" />
+    <ClCompile Include="cryptoh.c" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
