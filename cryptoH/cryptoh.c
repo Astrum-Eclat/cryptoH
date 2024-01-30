@@ -2,5 +2,5 @@
 
 char* hash(char* data, char* password)
 {
-    return nullptr;
+    return 0;
 }
