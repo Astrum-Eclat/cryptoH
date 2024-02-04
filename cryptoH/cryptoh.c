@@ -1,9 +1,10 @@
 #include "cryptoh.h"
 #include <string.h>
+#include <stdlib.h>
 
-char* hash(char* data, char* password, unsigned int bufferLen)
+char* hash(char* data, char* password, size_t bufferLen)
 {
-    unsigned int l = strlen(hash);
+    size_t l = strlen(data);
     char *buffer = (char* )malloc(bufferLen + 1);
     if (buffer == nullptr)
     {
@@ -12,12 +13,12 @@ char* hash(char* data, char* password, unsigned int bufferLen)
     buffer[bufferLen] = '\0';
     if (bufferLen > l)
     {
-        for (unsigned int i = 0; i < l - 1; i++)
+        for (size_t i = 0; i < l - 1; i++)
         {
             buffer[i] = data[i];
         }
-        int t = 0;
-        for (unsigned int i = l - 1; i < bufferLen; i++)
+        size_t t = 0;
+        for (size_t i = l - 1; i < bufferLen; i++)
         {
             buffer[i] = data[t];
             t++;
@@ -28,22 +29,22 @@ char* hash(char* data, char* password, unsigned int bufferLen)
         }
     }
     else if (bufferLen < l) {
-        for (unsigned int i = 0; i < bufferLen; i++)
+        for (size_t i = 0; i < bufferLen; i++)
         {
             buffer[i] = data[i];
         }
-        int t = 0;
-        for (unsigned int i = 0; i < l; i++)
+        size_t t = 0;
+        for (size_t i = 0; i < l; i++)
         {
             buffer[t] = data[i];
             if (t == bufferLen) {
-                t == 0;
+                t = 0;
             }
             t++;
         }
     }
     else {
-        for (int i = 0; i < bufferLen; i++)
+        for (size_t i = 0; i < bufferLen; i++)
         {
             buffer[i] = data[i];
         }

@@ -4,6 +4,6 @@
 #define nullptr (void*)0
 
 //Function prototypes
-char* hash(char* data, char* password, unsigned int len);
+char* hash(char* data, char* password, size_t len);
 
 #endif
