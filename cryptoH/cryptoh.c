@@ -6,9 +6,9 @@ char* hash(char* data, char* password, size_t bufferLen)
 {
     size_t l = strlen(data);
     char *buffer = (char* )malloc(bufferLen + 1);
-    if (buffer == nullptr)
+    if (buffer == NULL)
     {
-        return nullptr;
+        return NULL;
     }
     buffer[bufferLen] = '\0';
     if (bufferLen > l)
@@ -48,6 +48,10 @@ char* hash(char* data, char* password, size_t bufferLen)
         {
             buffer[i] = data[i];
         }
+    }
+    for (size_t i = 0; i < bufferLen; i++)
+    {
+
     }
     return buffer;
 }

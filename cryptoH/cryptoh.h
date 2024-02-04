@@ -1,7 +1,6 @@
 #ifndef CRYPTOH_H
 //Macros definitions
 #define CRYPTOH_H
-#define nullptr (void*)0
 #define hashLogSize 36
 
 #include <stddef.h>
