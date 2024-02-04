@@ -49,9 +49,26 @@ char* hash(char* data, char* password, size_t bufferLen)
             buffer[i] = data[i];
         }
     }
+    char t = 1;
     for (size_t i = 0; i < bufferLen; i++)
     {
-
+        int temp = buffer[i] * (l % 3 + 1);
+        switch (t)
+        {
+        case 1:
+            temp << l;
+            break;
+        case 2:
+            temp = temp * l;
+            break;
+        case 3:
+            temp ^= l;
+            break;
+        }
+        temp = temp % hashLogSize;
+        t++;
+        if (t > 3) t = 1;
+        buffer[i] = hashLog[temp];
     }
     return buffer;
 }
