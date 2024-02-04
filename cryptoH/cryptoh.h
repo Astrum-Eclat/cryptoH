@@ -1,7 +1,9 @@
 #ifndef CRYPTOH_H
+//Macros definitions
 #define CRYPTOH_H
 #define nullptr (void*)0
 
-char* hash(char* data, char* password);
+//Function prototypes
+char* hash(char* data, char* password, unsigned int len);
 
 #endif
